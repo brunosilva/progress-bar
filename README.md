@@ -1,6 +1,6 @@
 # Progress bar
 
-Test how make a progress bar.
+basic code
 
 ## Component 'circle' -> WORKING
 
