@@ -1,0 +1,73 @@
+.progressBar {
+  .circular {
+    height: 100px;
+    width: 100px;
+    background: red;
+    position: relative;
+    transform: scale(1);
+
+    .inner {
+      position: absolute;
+      z-index: 99999999;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      margin: -40px 0 0 -40px;
+      background: #e5e5e5;
+      border-radius: 100%;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .bar {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: #e5e5e5;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      clip: rect(0px, 100px, 100px, 0px);
+    }
+
+    .circle {
+      .bar {
+        .progress {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border-radius: 100%;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          clip: rect(0px, 45px, 100px, 0px);
+          background: #464555;
+        }
+      }
+
+      .left {
+        .progress {
+          z-index: 1;
+          animation: left 4s linear both;
+        }
+      }
+      .right {
+        z-index: 3;
+        transform: rotate(180deg);
+        .progress {
+          animation: right 4s linear both;
+          animation-delay: 4s;
+        }
+      }
+      @keyframes left {
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+      @keyframes right {
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
