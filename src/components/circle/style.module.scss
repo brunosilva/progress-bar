@@ -1,72 +1,67 @@
 .progressBar {
-  .circular {
-    height: 100px;
-    width: 100px;
-    background: red;
+  .skill {
+    width: 160px;
+    height: 160px;
     position: relative;
-    transform: scale(1);
 
-    .inner {
-      position: absolute;
-      z-index: 99999999;
-      top: 50%;
-      left: 50%;
-      width: 80px;
-      height: 80px;
-      margin: -40px 0 0 -40px;
-      background: #e5e5e5;
-      border-radius: 100%;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-    }
+    .outer {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      padding: 20px;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 
-    .bar {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: #e5e5e5;
-      border-radius: 100%;
-      -webkit-border-radius: 100%;
-      -moz-border-radius: 100%;
-      clip: rect(0px, 100px, 100px, 0px);
-    }
+      .inner {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        background: #0061ff;
+        justify-content: center;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+          inset 0px 0px 0px 4px rgba(255, 255, 255, 0.7),
+          -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+          0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+          0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 
-    .circle {
-      .bar {
-        .progress {
+        .bgMiddle {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           position: absolute;
-          height: 100%;
-          width: 100%;
-          border-radius: 100%;
-          -webkit-border-radius: 100%;
-          -moz-border-radius: 100%;
-          clip: rect(0px, 45px, 100px, 0px);
-          background: #464555;
+
+          img {
+            width: 80px;
+          }
         }
       }
 
-      .left {
-        .progress {
-          z-index: 1;
-          animation: left 4s linear both;
-        }
+      #number {
+        font-weight: 600;
       }
-      .right {
-        z-index: 3;
-        transform: rotate(180deg);
-        .progress {
-          animation: right 4s linear both;
-          animation-delay: 4s;
-        }
-      }
-      @keyframes left {
-        100% {
-          transform: rotate(180deg);
-        }
-      }
-      @keyframes right {
-        100% {
-          transform: rotate(180deg);
-        }
+    }
+
+    circle {
+      fill: none;
+      stroke: #646555;
+      stroke-width: 20px;
+      stroke-dasharray: 395;
+      stroke-dashoffset: 395;
+      animation: anim 2s linear forwards;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @keyframes anim {
+      100% {
+        stroke-dashoffset: 150;
       }
     }
   }
