@@ -50,13 +50,13 @@ const Circle: React.FC<IProps> = ({ completed }) => {
       case 4:
         return `${style.skill} ${style.fourty}`
       case 5:
-        return `${style.skill} ${style.sixty}`
+        return `${style.skill} ${style.fifty}`
       case 6:
-        return `${style.skill} ${style.seventy}`
+        return `${style.skill} ${style.sixty}`
       case 7:
-        return `${style.skill} ${style.eighty}`
+        return `${style.skill} ${style.seventy}`
       case 8:
-        return `${style.skill} ${style.hundred}`
+        return `${style.skill} ${style.eighty}`
       default:
         return `${style.skill} ${style.empty}`
     }

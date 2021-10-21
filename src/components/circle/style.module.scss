@@ -100,34 +100,34 @@
   }
 
   > .ten {
-    @include setAnimationProgress(ten, 531);
+    @include setAnimationProgress(ten, 514);
   }
 
   > .twenty {
-    @include setAnimationProgress(twenty, 480);
+    @include setAnimationProgress(twenty, 446);
   }
 
   > .thirty {
-    @include setAnimationProgress(thirty, 429);
+    @include setAnimationProgress(thirty, 378);
   }
 
   > .fourty {
-    @include setAnimationProgress(fourty, 378);
+    @include setAnimationProgress(fourty, 310);
+  }
+
+  > .fifty {
+    @include setAnimationProgress(fifty, 242);
   }
 
   > .sixty {
-    @include setAnimationProgress(sixty, 327);
+    @include setAnimationProgress(sixty, 173);
   }
 
   > .seventy {
-    @include setAnimationProgress(seventy, 276);
+    @include setAnimationProgress(seventy, 225);
   }
 
   > .eighty {
-    @include setAnimationProgress(eighty, 225);
-  }
-
-  > .hundred {
-    @include setAnimationProgress(hundred, 174);
+    @include setAnimationProgress(eighty, 174);
   }
 }
