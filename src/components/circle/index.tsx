@@ -1,5 +1,5 @@
 // packages
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 
 // styles
 import style from './style.module.scss'
@@ -10,8 +10,10 @@ import ProductBoxImg from '../../assets/svg/box.png'
 
 interface IProps {
   completed: number
+  // showPercentage: boolean
 }
 const Circle: React.FC<IProps> = ({ completed }) => {
+  //const [percent, setPercent] = useState<number>(0)
   // keyframes references -------------------------
   //   empty    = 0% { stroke-dashoffset: 582; }
   //   ten      = 9% { stroke-dashoffset: 531; }
@@ -23,6 +25,13 @@ const Circle: React.FC<IProps> = ({ completed }) => {
   //   eighty   = 87% { stroke-dashoffset: 225; }
   //   hundred  = 100% { stroke-dashoffset: 174; }
   // ----------------------------------------------
+
+  // const handlePercentage = useCallback(() => {
+  //   //console.log(parseInt(((completed / 8) * 100).toFixed(2)))
+  //   setPercent(parseInt(((completed / 8) * 100).toFixed(2)))
+  // }, [completed])
+
+  // if (showPercentage) handlePercentage()
 
   const isInvalid =
     completed < 0 ||
