@@ -1,5 +1,5 @@
 // packages
-import React from 'react'
+import React, { useMemo } from 'react'
 
 // styles
 import style from './style.module.scss'
@@ -24,19 +24,57 @@ const Circle: React.FC<IProps> = ({ completed }) => {
   //   hundred  = 100% { stroke-dashoffset: 174; }
   // ----------------------------------------------
 
-  console.log(completed)
+  const isInvalid =
+    completed < 0 ||
+    completed > 8 ||
+    completed === null ||
+    completed === undefined
+
+  const handleProgress = useMemo(() => {
+    switch (completed) {
+      case 1:
+        return `${style.skill} ${style.ten}`
+      case 2:
+        return `${style.skill} ${style.twenty}`
+      case 3:
+        return `${style.skill} ${style.thirty}`
+      case 4:
+        return `${style.skill} ${style.fourty}`
+      case 5:
+        return `${style.skill} ${style.sixty}`
+      case 6:
+        return `${style.skill} ${style.seventy}`
+      case 7:
+        return `${style.skill} ${style.eighty}`
+      case 8:
+        return `${style.skill} ${style.hundred}`
+      default:
+        return `${style.skill} ${style.empty}`
+    }
+  }, [completed])
+
   return (
     <div className={style.progressBar}>
-      <div className={`${style.skill} ${style.hundred}`}>
-        <div className={style.outer}>
-          <div className={style.inner}>
-            <div className={style.bgMiddle} id="number">
-              <img src={ProductBoxImg} alt="" />
+      {isInvalid ? (
+        <div className={style.messageError}>
+          <div className={style.outer}>
+            <div className={style.inner}>
+              <span>Não foi possível carregar as informações</span>
             </div>
           </div>
         </div>
-        <ProgressBarImg />
-      </div>
+      ) : (
+        <div className={`${handleProgress}`}>
+          <div className={style.outer}>
+            <div className={style.inner}>
+              <div className={style.bgMiddle} id="number">
+                <img src={ProductBoxImg} alt="" />
+              </div>
+            </div>
+          </div>
+          <ProgressBarImg />
+        </div>
+      )}
     </div>
   )
 }
