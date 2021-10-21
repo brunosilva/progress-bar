@@ -8,7 +8,11 @@ import style from './style.module.scss'
 import { ReactComponent as ProgressBarImg } from '../../assets/svg/bg.svg'
 import ProductBoxImg from '../../assets/svg/box.png'
 
-const Circle: React.FC = () => {
+interface IProps {
+  completed: number
+}
+const Circle: React.FC<IProps> = ({ completed }) => {
+  console.log(completed)
   return (
     <div className={style.progressBar}>
       <div className={style.skill}>

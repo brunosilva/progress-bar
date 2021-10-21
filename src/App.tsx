@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       {/* <Circle /> */}
-      <Circle />
+      <Circle completed={3} />
     </>
   )
 }

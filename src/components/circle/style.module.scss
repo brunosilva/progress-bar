@@ -18,7 +18,7 @@
         border-radius: 50%;
         display: flex;
         align-items: center;
-        background: #0061ff;
+        background: var(--blue-500);
         justify-content: center;
         box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
           inset 0px 0px 0px 4px rgba(255, 255, 255, 0.7),
@@ -27,7 +27,7 @@
           0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 
         .bgMiddle {
-          color: #fff;
+          color: var(--white);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -46,10 +46,10 @@
 
     circle {
       fill: none;
-      stroke: #646555;
+      stroke: var(--gray-500);
       stroke-width: 5px;
-      stroke-dasharray: 585;
-      stroke-dashoffset: 585;
+      stroke-dasharray: 582;
+      stroke-dashoffset: 582;
       animation: anim 2s linear forwards;
     }
 
@@ -60,8 +60,36 @@
     }
 
     @keyframes anim {
+      // totalmente vazio = 582
+      // 8 etapas no cadastro
+      // reduzir 51 por etapa para progressBar ficar cheio
+      0% {
+        stroke-dashoffset: 582;
+      }
+      9% {
+        stroke-dashoffset: 531;
+      }
+      22% {
+        stroke-dashoffset: 480;
+      }
+      35% {
+        stroke-dashoffset: 429;
+      }
+      48% {
+        stroke-dashoffset: 378;
+      }
+      61% {
+        stroke-dashoffset: 327;
+      }
+      74% {
+        stroke-dashoffset: 276;
+      }
+      87% {
+        stroke-dashoffset: 225;
+      }
       100% {
-        stroke-dashoffset: 175;
+        stroke-dashoffset: 174;
+        //stroke-dashoffset: 480;
       }
     }
   }
