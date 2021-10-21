@@ -1,3 +1,5 @@
+@import 'mixin';
+
 .progressBar {
   .skill {
     width: 130px;
@@ -44,53 +46,57 @@
       }
     }
 
-    circle {
-      fill: none;
-      stroke: var(--gray-500);
-      stroke-width: 5px;
-      stroke-dasharray: 582;
-      stroke-dashoffset: 582;
-      animation: anim 2s linear forwards;
-    }
-
     svg {
       position: absolute;
       top: 0;
       left: 0;
     }
+  }
 
-    @keyframes anim {
-      // totalmente vazio = 582
-      // 8 etapas no cadastro
-      // reduzir 51 por etapa para progressBar ficar cheio
-      0% {
-        stroke-dashoffset: 582;
-      }
-      9% {
-        stroke-dashoffset: 531;
-      }
-      22% {
-        stroke-dashoffset: 480;
-      }
-      35% {
-        stroke-dashoffset: 429;
-      }
-      48% {
-        stroke-dashoffset: 378;
-      }
-      61% {
-        stroke-dashoffset: 327;
-      }
-      74% {
-        stroke-dashoffset: 276;
-      }
-      87% {
-        stroke-dashoffset: 225;
-      }
-      100% {
-        stroke-dashoffset: 174;
-        //stroke-dashoffset: 480;
-      }
-    }
+  // keyframes references -------------------------
+  //   empty    = 0% { stroke-dashoffset: 582; }
+  //   ten      = 9% { stroke-dashoffset: 531; }
+  //   twenty   = 22% { stroke-dashoffset: 480; }
+  //   thirty   = 35% { stroke-dashoffset: 429; }
+  //   fourty   = 48% { stroke-dashoffset: 378; }
+  //   sixty    = 61% { stroke-dashoffset: 327; }
+  //   seventy  = 74% { stroke-dashoffset: 276; }
+  //   eighty   = 87% { stroke-dashoffset: 225; }
+  //   hundred  = 100% { stroke-dashoffset: 174; }
+  // ----------------------------------------------
+  > .empty {
+    @include setAnimationProgress(empty, 582);
+  }
+
+  > .ten {
+    @include setAnimationProgress(ten, 531);
+  }
+
+  > .twenty {
+    @include setAnimationProgress(twenty, 480);
+  }
+
+  > .thirty {
+    @include setAnimationProgress(thirty, 429);
+  }
+
+  > .fourty {
+    @include setAnimationProgress(fourty, 378);
+  }
+
+  > .sixty {
+    @include setAnimationProgress(sixty, 327);
+  }
+
+  > .seventy {
+    @include setAnimationProgress(seventy, 276);
+  }
+
+  > .eighty {
+    @include setAnimationProgress(eighty, 225);
+  }
+
+  > .hundred {
+    @include setAnimationProgress(hundred, 174);
   }
 }
