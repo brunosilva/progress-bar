@@ -9,16 +9,16 @@ The base are working [progress bar - Working](https://github.com/brunosilva/prog
 The progress-bar have
 
 ```scss
-stroke-dasharray: 395;
-stroke-dashoffset: 395;
+stroke-dasharray: 585;
+stroke-dashoffset: 585;
 ```
 
-and when are empty, the value at `stroke-dashoffset` is `395` and when are full `stroke-dashoffset` is `0` at code bellow
+and when are empty, the value at `stroke-dashoffset` is `585` and when are full `stroke-dashoffset` is `0` at code bellow
 
 ```scss
 @keyframes anim {
   100% {
-    stroke-dashoffset: 150;
+    stroke-dashoffset: 350;
   }
 }
 ```
