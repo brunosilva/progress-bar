@@ -23,7 +23,7 @@ and when are empty, the value at `stroke-dashoffset` is `585` and when are full 
 }
 ```
 
-![progress-bar](https://user-images.githubusercontent.com/17436856/138168127-c1e0b5c9-8ceb-4a58-af04-87f0f4ae9b7c.png)
+![progress-bar](https://user-images.githubusercontent.com/17436856/138360317-27c06326-2aab-4e32-bfe7-2c5f39b168ab.png)
 
 ## Component 'circle-test' -> NOT WORKING
 
