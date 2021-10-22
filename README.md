@@ -13,15 +13,37 @@ stroke-dasharray: 585;
 stroke-dashoffset: 585;
 ```
 
-and when are empty, the value at `stroke-dashoffset` is `585` and when are full `stroke-dashoffset` is `0` at code bellow
+And when are empty, the value at `stroke-dashoffset` is `585` and when are full `stroke-dashoffset` is `0` at code bellow
+
+For make animation I create a mixin
 
 ```scss
-@keyframes anim {
-  100% {
-    stroke-dashoffset: 350;
+@mixin setAnimationProgress($name, $value) {
+  circle {
+    fill: none;
+    stroke: var(--gray-500);
+    stroke-width: 5px;
+    stroke-dasharray: 582;
+    stroke-dashoffset: 582;
+    animation: $name 2s linear forwards;
+  }
+
+  @keyframes #{$name} {
+    100% {
+      stroke-dashoffset: $value;
+    }
   }
 }
 ```
+
+and every time you need this mixin, just call it using the code below
+
+```scss
+@include setAnimationProgress(empty, 582);
+```
+
+- 1° parameter: is name to animation
+- 2° parameter: is value to change at progress
 
 ![progress-bar](https://user-images.githubusercontent.com/17436856/138360317-27c06326-2aab-4e32-bfe7-2c5f39b168ab.png)
 
