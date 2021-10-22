@@ -1,5 +1,5 @@
 // packages
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 
 // styles
 import style from './style.module.scss'
