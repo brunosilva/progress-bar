@@ -1,9 +1,10 @@
 @import 'mixin';
+@import 'variables';
 
 .progressBar {
   .messageError {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -32,14 +33,24 @@
     }
   }
 
+  // @function setProgress($value) {
+  //   $sum: 500 / $value;
+  //   $result: 500;
+  //   $name: '';
+  //   @each $number in $value {
+  //     $result: $result - $sum;
+  //   }
+  //   @return $result;
+  // }
+
   .skill {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     position: relative;
 
     .outer {
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       padding: 10px;
       // box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
@@ -85,46 +96,47 @@
   }
 
   // keyframes references -------------------------
-  //   empty    = 0% { stroke-dashoffset: 582; }
-  //   ten      = 9% { stroke-dashoffset: 531; }
-  //   twenty   = 22% { stroke-dashoffset: 480; }
-  //   thirty   = 35% { stroke-dashoffset: 429; }
-  //   fourty   = 48% { stroke-dashoffset: 378; }
-  //   sixty    = 61% { stroke-dashoffset: 327; }
-  //   seventy  = 74% { stroke-dashoffset: 276; }
-  //   eighty   = 87% { stroke-dashoffset: 225; }
+  //   empty    = 0% { stroke-dashoffset: 500; }
+  //   ten      = 9% { stroke-dashoffset: 429; }
+  //   twenty   = 22% { stroke-dashoffset: 358; }
+  //   thirty   = 35% { stroke-dashoffset: 287; }
+  //   fourty   = 48% { stroke-dashoffset: 216; }
+  //   fifty    = 61% { stroke-dashoffset: 145; }
+  //   sixty    = 74% { stroke-dashoffset: 74; }
+  //   seventy  = 87% { stroke-dashoffset: 225; }
   //   hundred  = 100% { stroke-dashoffset: 174; }
   // ----------------------------------------------
+
   > .empty {
-    @include setAnimationProgress(empty, 582);
+    @include setAnimationProgress(empty, 500);
   }
 
   > .ten {
-    @include setAnimationProgress(ten, 514);
+    @include setAnimationProgress(ten, 429);
   }
 
   > .twenty {
-    @include setAnimationProgress(twenty, 446);
+    @include setAnimationProgress(twenty, 358);
   }
 
   > .thirty {
-    @include setAnimationProgress(thirty, 378);
+    @include setAnimationProgress(thirty, 287);
   }
 
   > .fourty {
-    @include setAnimationProgress(fourty, 310);
+    @include setAnimationProgress(fourty, 216);
   }
 
   > .fifty {
-    @include setAnimationProgress(fifty, 242);
+    @include setAnimationProgress(fifty, 145);
   }
 
   > .sixty {
-    @include setAnimationProgress(sixty, 173);
+    @include setAnimationProgress(sixty, 74);
   }
 
   > .seventy {
-    @include setAnimationProgress(seventy, 225);
+    @include setAnimationProgress(seventy, 0);
   }
 
   > .eighty {

@@ -1,5 +1,5 @@
 // packages
-import React, { useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 // styles
 import style from './style.module.scss'
@@ -9,9 +9,11 @@ import { ReactComponent as ProgressBarImg } from '../../assets/svg/bg.svg'
 import ProductBoxImg from '../../assets/svg/box.png'
 
 interface IProps {
+  steps: number
   completed: number
 }
-const Circle: React.FC<IProps> = ({ completed }) => {
+
+const Circle: React.FC<IProps> = ({ steps, completed }) => {
   // keyframes references -------------------------
   //   empty    = 0% { stroke-dashoffset: 582; }
   //   ten      = 9% { stroke-dashoffset: 531; }
@@ -23,12 +25,25 @@ const Circle: React.FC<IProps> = ({ completed }) => {
   //   eighty   = 87% { stroke-dashoffset: 225; }
   //   hundred  = 100% { stroke-dashoffset: 174; }
   // ----------------------------------------------
+  // const [resultValue, setResultValue] = useState<number>()
+  // const [createClass, setCreateClass] = useState<string>('')
+  const isValidCompleted =
+    completed >= 0 && completed <= steps && typeof completed === 'number'
+  // const isValidSteps =
+  //   steps > 0 && steps > completed && typeof steps === 'number'
+  // let amountProgress: number = 500
 
-  const isInvalid =
-    completed < 0 ||
-    completed > 8 ||
-    completed === null ||
-    completed === undefined
+  // function createClassName() {}
+  // useEffect(() => {
+  //   const trueValues = isValidSteps && isValidCompleted
+  //   if (trueValues) {
+  //     const valueStep: number = parseInt((500 / steps).toFixed(0))
+  //     for (var i = 0; i < completed; i++) {
+  //       amountProgress = amountProgress - valueStep
+  //     }
+  //     setResultValue(amountProgress)
+  //   }
+  // }, [steps, completed, isValidSteps, isValidCompleted])
 
   const handleProgress = useMemo(() => {
     switch (completed) {
@@ -48,6 +63,10 @@ const Circle: React.FC<IProps> = ({ completed }) => {
         return `${style.skill} ${style.seventy}`
       case 8:
         return `${style.skill} ${style.eighty}`
+      case 9:
+        return `${style.skill} ${style.ninety}`
+      case 10:
+        return `${style.skill} ${style.ten}`
       default:
         return `${style.skill} ${style.empty}`
     }
@@ -55,24 +74,25 @@ const Circle: React.FC<IProps> = ({ completed }) => {
 
   return (
     <div className={style.progressBar}>
-      {isInvalid ? (
+      <span className={style.title}>Progress bar component</span>
+      {isValidCompleted ? (
+        <div className={`${handleProgress}`} id="handleProgress">
+          <div className={style.outer}>
+            <div className={style.inner}>
+              <div className={style.bgMiddle}>
+                <img src={ProductBoxImg} alt="" />
+              </div>
+            </div>
+          </div>
+          <ProgressBarImg />
+        </div>
+      ) : (
         <div className={style.messageError}>
           <div className={style.outer}>
             <div className={style.inner}>
               <span>Não foi possível carregar as informações</span>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className={`${handleProgress}`}>
-          <div className={style.outer}>
-            <div className={style.inner}>
-              <div className={style.bgMiddle} id="number">
-                <img src={ProductBoxImg} alt="" />
-              </div>
-            </div>
-          </div>
-          <ProgressBarImg />
         </div>
       )}
     </div>
