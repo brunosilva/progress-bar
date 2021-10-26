@@ -16,19 +16,17 @@ The base are working [progress bar - Working](https://github.com/brunosilva/prog
 
 For parametrize, define at your SCSS the values to progress
 
-<!--
-  // keyframes references -------------------------
-  //   empty    = 0% { stroke-dashoffset: 500; }
-  //   ten      = 9% { stroke-dashoffset: 429; }
-  //   twenty   = 22% { stroke-dashoffset: 358; }
-  //   thirty   = 35% { stroke-dashoffset: 287; }
-  //   fourty   = 48% { stroke-dashoffset: 216; }
-  //   fifty    = 61% { stroke-dashoffset: 145; }
-  //   sixty    = 74% { stroke-dashoffset: 74; }
-  //   seventy  = 87% { stroke-dashoffset: 225; }
-  //   hundred  = 100% { stroke-dashoffset: 174; }
-  // ----------------------------------------------
--->
+`// keyframes references -------------------------`
+`// empty = 0% { stroke-dashoffset: 500; }`
+`// ten = 9% { stroke-dashoffset: 429; }`
+`// twenty = 22% { stroke-dashoffset: 358; }`
+`// thirty = 35% { stroke-dashoffset: 287; }`
+`// fourty = 48% { stroke-dashoffset: 216; }`
+`// fifty = 61% { stroke-dashoffset: 145; }`
+`// sixty = 74% { stroke-dashoffset: 74; }`
+`// seventy = 87% { stroke-dashoffset: 225; }`
+`// hundred = 100% { stroke-dashoffset: 174; }`
+`// ----------------------------------------------`
 
 ### The SCSS progress-bar
 
