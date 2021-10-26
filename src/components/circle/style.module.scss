@@ -33,16 +33,6 @@
     }
   }
 
-  // @function setProgress($value) {
-  //   $sum: 500 / $value;
-  //   $result: 500;
-  //   $name: '';
-  //   @each $number in $value {
-  //     $result: $result - $sum;
-  //   }
-  //   @return $result;
-  // }
-
   .skill {
     width: 150px;
     height: 150px;
@@ -139,7 +129,7 @@
     @include setAnimationProgress(seventy, 0);
   }
 
-  > .eighty {
-    @include setAnimationProgress(eighty, 174);
+  > .hundred {
+    @include setAnimationProgress(hundred, 0);
   }
 }

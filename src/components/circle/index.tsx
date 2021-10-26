@@ -1,5 +1,5 @@
 // packages
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 
 // styles
 import style from './style.module.scss'
@@ -9,41 +9,23 @@ import { ReactComponent as ProgressBarImg } from '../../assets/svg/bg.svg'
 import ProductBoxImg from '../../assets/svg/box.png'
 
 interface IProps {
-  steps: number
   completed: number
 }
 
-const Circle: React.FC<IProps> = ({ steps, completed }) => {
+const Circle: React.FC<IProps> = ({ completed }) => {
   // keyframes references -------------------------
-  //   empty    = 0% { stroke-dashoffset: 582; }
-  //   ten      = 9% { stroke-dashoffset: 531; }
-  //   twenty   = 22% { stroke-dashoffset: 480; }
-  //   thirty   = 35% { stroke-dashoffset: 429; }
-  //   fourty   = 48% { stroke-dashoffset: 378; }
-  //   sixty    = 61% { stroke-dashoffset: 327; }
-  //   seventy  = 74% { stroke-dashoffset: 276; }
-  //   eighty   = 87% { stroke-dashoffset: 225; }
+  //   empty    = 0% { stroke-dashoffset: 500; }
+  //   ten      = 9% { stroke-dashoffset: 429; }
+  //   twenty   = 22% { stroke-dashoffset: 358; }
+  //   thirty   = 35% { stroke-dashoffset: 287; }
+  //   fourty   = 48% { stroke-dashoffset: 216; }
+  //   fifty    = 61% { stroke-dashoffset: 145; }
+  //   sixty    = 74% { stroke-dashoffset: 74; }
+  //   seventy  = 87% { stroke-dashoffset: 225; }
   //   hundred  = 100% { stroke-dashoffset: 174; }
   // ----------------------------------------------
-  // const [resultValue, setResultValue] = useState<number>()
-  // const [createClass, setCreateClass] = useState<string>('')
-  const isValidCompleted =
-    completed >= 0 && completed <= steps && typeof completed === 'number'
-  // const isValidSteps =
-  //   steps > 0 && steps > completed && typeof steps === 'number'
-  // let amountProgress: number = 500
 
-  // function createClassName() {}
-  // useEffect(() => {
-  //   const trueValues = isValidSteps && isValidCompleted
-  //   if (trueValues) {
-  //     const valueStep: number = parseInt((500 / steps).toFixed(0))
-  //     for (var i = 0; i < completed; i++) {
-  //       amountProgress = amountProgress - valueStep
-  //     }
-  //     setResultValue(amountProgress)
-  //   }
-  // }, [steps, completed, isValidSteps, isValidCompleted])
+  const isValidCompleted = completed >= 0 && typeof completed === 'number'
 
   const handleProgress = useMemo(() => {
     switch (completed) {
