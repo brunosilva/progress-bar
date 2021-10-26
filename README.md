@@ -63,11 +63,11 @@ For make animation I create a mixin
 
 ### Somethings
 
+And when are empty, the value at `stroke-dashoffset` is `500` and when are full `stroke-dashoffset` is `0` at code bellow
+
 ```scss
 stroke-dasharray: 500;
 stroke-dashoffset: 500;
 ```
-
-And when are empty, the value at `stroke-dashoffset` is `500` and when are full `stroke-dashoffset` is `0` at code bellow
 
 ![progress-bar](https://user-images.githubusercontent.com/17436856/138360317-27c06326-2aab-4e32-bfe7-2c5f39b168ab.png)
